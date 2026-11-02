@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PEEP DYNASTY — Mint Live</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#420303;color:#DFC4AF;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.banner{background:#FDC879;border:1px solid #FDC879;border-radius:12px;padding:10px 14px;text-align:center;font-weight:800;font-size:14px;color:#420303}
+.lang{display:flex;gap:8px;justify-content:flex-end;margin:12px 0}
+.lang button{border:1px solid #DFC4AF;background:#4C0C09;color:#DFC4AF;border-radius:999px;padding:6px 14px;font-weight:700;cursor:pointer}
+.lang button.on{background:#FDC879;color:#420303;border-color:#FDC879}
+.hero{text-align:center;margin:8px 0 4px}.hero img{width:100%;max-width:720px;border-radius:20px;border:2px solid #FDC879}
+h1{font-size:34px;margin:12px 0 4px;color:#FDC879}h2{font-size:22px;margin:28px 0 10px;color:#FDC879}.sub{color:#DFC4AF;margin:0 0 16px}.slogan{color:#FDC879;font-weight:800;font-size:18px;margin:8px 0 2px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{border:1px solid #FDC879;border-radius:14px;padding:14px;background:#4C0C09}
+.card b{font-size:17px;color:#FDC879}.card p{margin:6px 0;color:#DFC4AF;font-size:14px}
+.btn{display:block;width:100%;text-align:center;background:#FDC879;color:#420303;border:0;border-radius:12px;padding:13px;font-size:16px;font-weight:800;cursor:pointer}
+.btn:disabled{background:#9A8480;cursor:not-allowed;color:#420303}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border:1px solid #FDC879;border-radius:14px;overflow:hidden;text-align:center;background:#4C0C09}
+.tile img{width:100%;display:block}.tile div{padding:8px 6px;font-size:13px}
+.tile b{display:block;font-size:15px;color:#FDC879}
+pre{white-space:pre-wrap;word-break:break-word;background:#4C0C09;border:1px solid #FDC879;border-radius:12px;padding:14px;font-size:13px;line-height:1.5;max-height:420px;overflow:auto;color:#DFC4AF}
+.note{background:#4C0C09;border:1px solid #FDC879;border-radius:12px;padding:12px 14px;font-size:14px;color:#DFC4AF}
+table{width:100%;border-collapse:collapse;font-size:14px}td,th{border-bottom:1px solid #FDC879;padding:8px 4px;text-align:left}
+.step{display:flex;gap:10px;align-items:center;justify-content:center;margin:12px 0}.step button{width:44px;height:44px;border-radius:50%;border:1px solid #FDC879;background:#4C0C09;color:#FDC879;font-size:22px;cursor:pointer}.step span{font-size:20px;font-weight:800;min-width:30px;text-align:center}#liveMinted,#livePrice,#total{color:#D14F3E}
+.foot{color:#9A8480;font-size:13px;text-align:center;margin:28px 0 8px}
+.accent{color:#D14F3E}
+</style>
+</head>
+<body><div class="wrap">
+<div class="banner" data-t="banner">MINT IS LIVE — Peep Dynasty mint is open.</div>
+<div class="lang"><button id="b-en" class="on" onclick="setLang('en')">English</button><button id="b-ja" onclick="setLang('ja')">日本語</button></div>
+
+<div class="hero"><img src="assets/hero.jpg" alt="Peep Dynasty poster">
+<h1>PEEP DYNASTY</h1>
+<p class="slogan">Little Chick. Big Fortune.</p>
+<p class="sub" data-t="sub">A charming NFT collection of adorable chicks from a mystical Chinese kingdom. <span class="accent">888</span> NFTs on BNB Chain. Chinese 2D Cartoon PFP Collectibles.</p></div>
+
+<h2 data-t="mint">Mint</h2>
+<div class="grid">
+<div class="card"><b data-t="p0">Free Mint</b><p data-t="p0d">Tokens 1–333<br>Free, gas only</p></div>
+<div class="card"><b data-t="p1">Phase 1</b><p data-t="p1d">Tokens 334–666<br>0.0002 BNB each</p></div>
+<div class="card" style="grid-column:1/-1"><b data-t="p2">Phase 2</b><p data-t="p2d">Tokens 667–888<br>0.005 BNB each</p></div>
+</div>
+<div class="card" style="margin-top:10px"><b>888</b><p data-t="mintd">Max 11 per wallet (cumulative). Sequential token IDs.<br>Sellout total: 1.1766 BNB.</p>
+<div class="note" style="margin:10px 0">Minted: <b id="liveMinted">…</b> / 888 · <span data-t="phase">Phase</span>: <b id="livePhase">…</b> · Price: <b id="livePrice">…</b> BNB</div>
+<div class="step"><button onclick="chQty(-1)">−</button><span id="qty">1</span><button onclick="chQty(1)">+</button></div>
+<p>Total: <b id="total">Free — gas only</b></p>
+<button class="btn" id="mintbtn" onclick="doMint()" data-t="mintbtn">Connect Wallet &amp; Mint</button>
+<p id="mintmsg" class="note" style="display:none;margin-top:10px"></p></div>
+
+<h2 data-t="agent">Agent Mint</h2>
+<p class="note" data-t="agentd">Paste this prompt into your own AI agent and it will mint for you. The prompt is in English because agents handle it best. The contract address will appear here after deploy — until then, the prompt tells the agent to stop.</p>
+<pre id="prompt">You are my minting agent for the PEEP DYNASTY NFT collection on BNB Chain (BSC mainnet, chain ID 56).
+
+CONTRACT ADDRESS: 0x849BAA6206F58C4b413F3Ffcb684a7d73132370F
+COLLECTION: PEEP DYNASTY — 888 supply, BEP-721, sequential token IDs
+FREE MINT: tokens 1–333 at 0 BNB (gas only)
+PHASE 1: tokens 334–666 at 0.0002 BNB each
+PHASE 2: tokens 667–888 at 0.005 BNB each
+MAX PER WALLET: 11 total (cumulative across both phases)
+
+Before minting, you MUST call these read-only functions on the contract and report the exact results to me:
+1. mintOpen() — if false, STOP and tell me mint is closed.
+2. totalMinted() — to confirm the current phase and remaining supply.
+3. currentPrice() — the exact price per NFT right now.
+4. mintedPerWallet(MY_WALLET) — how many I have already minted; if it is already 11, STOP.
+
+Then ask me to confirm the quantity (1–11, and never more than 11 minus what I already minted).
+Only after my confirmation, call mint(QUANTITY) and send exactly currentPrice x QUANTITY in BNB. Do NOT approve any token spending — this mint is paid in native BNB only.
+After the transaction, report the transaction hash and my new token IDs.
+
+If anything above is unclear, STOP and tell me — do not mint.</pre>
+<button class="btn" onclick="copyPrompt()" data-t="copy">Copy Prompt</button>
+
+<h2 data-t="chars">Rarity Collection</h2>
+<div class="tiles">
+<div class="tile"><img src="assets/common.jpg" alt="Common"><div><b>Common</b>384 / 888</div></div>
+<div class="tile"><img src="assets/uncommon.jpg" alt="Uncommon"><div><b>Uncommon</b>211 / 888</div></div>
+<div class="tile"><img src="assets/rare.jpg" alt="Rare"><div><b>Rare</b>134 / 888</div></div>
+<div class="tile"><img src="assets/epic.jpg" alt="Epic"><div><b>Epic</b>72 / 888</div></div>
+<div class="tile"><img src="assets/legendary.jpg" alt="Legendary"><div><b>Legendary</b>72 / 888</div></div>
+<div class="tile"><img src="assets/mythic.jpg" alt="Mythic"><div><b>Mythic</b>15 / 888</div></div>
+</div>
+
+<h2 data-t="feat">Key Features</h2>
+<div class="grid">
+<div class="card"><b data-t="f1">Hatch System</b><p data-t="f1d">From Egg to Legend</p></div>
+<div class="card"><b data-t="f2">Dynasty Traits</b><p data-t="f2d">Unique Looks &amp; Skills</p></div>
+<div class="card"><b data-t="f3">Elemental Powers</b><p data-t="f3d">Fire, Water, Wood, Metal, Earth</p></div>
+<div class="card"><b data-t="f4">Royal Collection</b><p data-t="f4d">Exclusive Imperial Peep</p></div>
+<div class="card"><b data-t="f5">Community Lore</b><p data-t="f5d">Build the Story Together</p></div>
+</div>
+
+<h2 data-t="how">How It Works</h2>
+<div class="note" data-t="howd">1. Connect your wallet (BSC mainnet). 2. Choose a quantity (1–11). 3. Confirm the mint and pay in BNB. Mint is live now.</div>
+
+<h2 data-t="spec">Spec Sheet</h2>
+<table>
+<tr><td>Chain</td><td>BNB Chain mainnet (56)</td></tr>
+<tr><td>Standard</td><td>BEP-721</td></tr>
+<tr><td>Supply</td><td>888</td></tr>
+<tr><td>Free Mint</td><td>Tokens 1–333 · Free, gas only</td></tr>
+<tr><td>Phase 1</td><td>Tokens 334–666 · 0.0002 BNB</td></tr>
+<tr><td>Phase 2</td><td>Tokens 667–888 · 0.005 BNB</td></tr>
+<tr><td>Max per wallet</td><td>11 (cumulative)</td></tr>
+<tr><td>Token IDs</td><td>Sequential</td></tr>
+</table>
+
+<h2 data-t="contracts">Contracts</h2>
+<div class="note">Contract: <b>0x849B…370F</b> <button onclick="copyContract()" style="border:1px solid #FDC879;background:#4C0C09;color:#FDC879;border-radius:999px;padding:4px 12px;font-weight:700;cursor:pointer">Copy</button> · <a href="https://bscscan.com/address/0x849BAA6206F58C4b413F3Ffcb684a7d73132370F">BscScan</a><br>Deploy tx: <a href="https://bscscan.com/tx/0x88af5ebc79d1842a3410f3cbd2c3f52604d7105daee89c10d5030bc576a5f10c">0x88af5ebc…5f10c</a><br>Mint page: peep-dynasty.vercel.app</div>
+
+<p class="foot">PEEP DYNASTY — Mint live on BNB Chain. No official X yet.</p>
+</div>
+<script>
+var T={
+en:{banner:"MINT IS LIVE — Peep Dynasty mint is open.",sub:"A charming NFT collection of adorable chicks from a mystical Chinese kingdom. 888 NFTs on BNB Chain. Chinese 2D Cartoon PFP Collectibles.",mint:"Mint",p0:"Free Mint",p0d:"Tokens 1–333<br>Free, gas only",p1:"Phase 1",p1d:"Tokens 334–666<br>0.0002 BNB each",p2:"Phase 2",p2d:"Tokens 667–888<br>0.005 BNB each",mintd:"Max 11 per wallet (cumulative). Sequential token IDs.<br>Sellout total: 1.1766 BNB.",mintbtn:"Connect Wallet & Mint",agent:"Agent Mint",agentd:"Paste this prompt into your own AI agent and it will mint for you. The prompt is in English because agents handle it best.",copy:"Copy Prompt",chars:"Rarity Collection",feat:"Key Features",f1:"Hatch System",f1d:"From Egg to Legend",f2:"Dynasty Traits",f2d:"Unique Looks & Skills",f3:"Elemental Powers",f3d:"Fire, Water, Wood, Metal, Earth",f4:"Royal Collection",f4d:"Exclusive Imperial Peep",f5:"Community Lore",f5d:"Build the Story Together",how:"How It Works",howd:"1. Connect your wallet (BSC mainnet). 2. Choose a quantity (1–11). 3. Confirm the mint and pay in BNB. Mint is live now.",spec:"Spec Sheet",contracts:"Contracts",phase:"Phase"},
+ja:{banner:"ミント開始 — Peep Dynastyのミントがオープンしました。",sub:"不思議な中国王国の可愛いひよこたちのコレクション。BNBチェーン上の888体。中国風2DカートゥーンPFP。",mint:"ミント",p0:"無料ミント",p0d:"トークン 1–333<br>無料（ガスのみ）",p1:"フェーズ1",p1d:"トークン 334–666<br>1体あたり0.0002 BNB",p2:"フェーズ2",p2d:"トークン 667–888<br>1体あたり0.005 BNB",mintd:"1ウォレットあたり最大11体（累計）。連番のトークンID。<br>完売時合計：1.1766 BNB。",mintbtn:"ウォレットを接続してミント",agent:"エージェントミント",agentd:"このプロンプトをあなたのAIエージェントに貼り付けると、代わりにミントしてくれます。プロンプトは英語です（エージェントが最も扱いやすいため）。",copy:"プロンプトをコピー",chars:"レアリティコレクション",feat:"主な特徴",f1:"ハッチシステム",f1d:"卵から伝説へ",f2:"王朝の特徴",f2d:"ユニークな見た目とスキル",f3:"五行の力",f3d:"火・水・木・金・土",f4:"ロイヤルコレクション",f4d:"限定の皇帝ピープ",f5:"コミュニティの物語",f5d:"みんなで物語を作る",how:"ミントの手順",howd:"1. ウォレットを接続（BSCメインネット）。2. 数量を選択（1–11体）。3. ミントを承認し、BNBで支払います。ミントは現在オープンしています。",spec:"仕様",contracts:"コントラクト",phase:"フェーズ"}};
+function setLang(l){localStorage.setItem('peep_lang',l);document.documentElement.lang=l;
+document.getElementById('b-en').className=l=='en'?'on':'';document.getElementById('b-ja').className=l=='ja'?'on':'';
+document.querySelectorAll('[data-t]').forEach(function(el){var k=el.getAttribute('data-t');if(T[l][k])el.innerHTML=T[l][k];});}
+function copyPrompt(){var t=document.getElementById('prompt').innerText;
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){alert('Copied! / コピーしました！');});}
+else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);alert('Copied! / コピーしました！');}}
+setLang(localStorage.getItem('peep_lang')||'en');
+</script>
+
+<script>
+var CONTRACT="0x849BAA6206F58C4b413F3Ffcb684a7d73132370F";
+var RPCS=["https://bsc-dataseed1.defibit.io/","https://bsc-dataseed.binance.org/","https://bsc-dataseed1.ninicoin.io/"];
+async function rpcCall(data){for(var u of RPCS){try{var r=await fetch(u,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({jsonrpc:"2.0",id:1,method:"eth_call",params:[{to:CONTRACT,data},"latest"]})});var j=await r.json();if(j.result)return j.result;}catch(e){}}return null;}
+var livePrice=0, liveMinted=0, myMinted=0, qty=1;
+function updTotal(){document.getElementById("total").innerText=livePrice===0?"Free — gas only":(livePrice*qty).toFixed(4)+" BNB";document.getElementById("qty").innerText=qty;}
+function chQty(d){qty=Math.max(1,Math.min(11,qty+d));if(myMinted)qty=Math.min(qty,Math.max(1,11-myMinted));updTotal();}
+async function readLive(){try{
+var tm=await rpcCall("0xa2309ff8");if(tm!==null){liveMinted=parseInt(tm,16);document.getElementById("liveMinted").innerText=liveMinted.toLocaleString();}
+var pr=await rpcCall("0x9d1b464a");if(pr!==null){livePrice=parseInt(pr,16)/1e18;document.getElementById("livePrice").innerText=livePrice;}
+document.getElementById("livePhase").innerText=liveMinted<333?"Free":(liveMinted<666?"1":"2");updTotal();
+if(window.ethereum){try{var a=await window.ethereum.request({method:"eth_accounts"});if(a.length){var mp=await rpcCall("0x3a602b4d"+a[0].slice(2).padStart(64,"0"));if(mp!==null)myMinted=parseInt(mp,16);}}catch(e){}}
+}catch(e){}}
+function copyContract(){var t="0x849BAA6206F58C4b413F3Ffcb684a7d73132370F";
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){alert('Contract copied!');});}
+else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);alert('Contract copied!');}}
+async function doMint(){var msg=document.getElementById("mintmsg");msg.style.display="block";
+try{
+if(!window.ethereum){msg.innerText="No wallet found. Open this page in a wallet browser (e.g. Binance Wallet).";return;}
+var chain=await window.ethereum.request({method:"eth_chainId"});
+if(chain!=="0x38"){try{await window.ethereum.request({method:"wallet_switchEthereumChain",params:[{chainId:"0x38"}]});}catch(e){if(e.code===4902){await window.ethereum.request({method:"wallet_addEthereumChain",params:[{chainId:"0x38",chainName:"BNB Smart Chain",nativeCurrency:{name:"BNB",symbol:"BNB",decimals:18},rpcUrls:["https://bsc-dataseed.binance.org/"],blockExplorerUrls:["https://bscscan.com"]}]});}else throw e;}}
+var accts=await window.ethereum.request({method:"eth_requestAccounts"});
+await readLive();var maxQ=Math.max(1,11-myMinted);if(qty>maxQ){qty=maxQ;updTotal();}
+var price=await rpcCall("0x9d1b464a");var pWei=price?BigInt(price):BigInt(Math.round(livePrice*1e18));
+var totalWei=pWei*BigInt(qty);
+var data="0xa0712d68"+qty.toString(16).padStart(64,"0");
+msg.innerText="Waiting for wallet confirmation...";
+var tx=await window.ethereum.request({method:"eth_sendTransaction",params:[{from:accts[0],to:CONTRACT,value:"0x"+totalWei.toString(16),data}]});
+msg.innerHTML='Mint sent! <a href="https://bscscan.com/tx/'+tx+'" target="_blank" rel="noopener">View on BscScan</a>';
+setTimeout(readLive,15000);
+}catch(e){msg.innerText="Mint failed: "+(e.message||e);}}
+readLive();setInterval(readLive,30000);
+</script>
+</body></html>
