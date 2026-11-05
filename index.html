@@ -1,109 +1,212 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PEEP DYNASTY — Little Chick. Big Fortune.</title>
+<meta name="description" content="PEEP DYNASTY: 888 adorable chick NFTs on BNB Chain. FREE phase sold out — Phase 1 open at 0.0002 BNB. Max 11 per wallet.">
 <meta property="og:title" content="PEEP DYNASTY — Little Chick. Big Fortune.">
 <meta property="og:description" content="888 adorable chick NFTs on BNB Chain. FREE phase sold out — Phase 1 open at 0.0002 BNB. Max 11 per wallet.">
-<meta name="twitter:card" content="summary_large_image">
 <meta property="og:image" content="https://peep-dynasty.vercel.app/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://peep-dynasty.vercel.app/assets/hero.jpg">
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#420303;color:#DFC4AF;line-height:1.6;padding-bottom:calc(76px + env(safe-area-inset-bottom));overflow-x:hidden}
-a{color:#FDC879}
-.hero{min-height:560px;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;background:url('assets/hero.jpg') center 30%/cover no-repeat;position:relative}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(66,3,3,.96) 8%,rgba(66,3,3,.45) 55%,rgba(66,3,3,.25))}
-.hero-in{position:relative;z-index:1;padding:28px 20px 40px}
-.lang{display:flex;gap:8px;justify-content:flex-end;margin-bottom:18px}
-.lang button{border:1px solid #DFC4AF;background:transparent;color:#DFC4AF;border-radius:999px;padding:6px 14px;font-weight:700;cursor:pointer}
-.lang button.on{background:#FDC879;color:#420303;border-color:#FDC879}
-.hero-in h1{font-family:Georgia,serif;font-size:clamp(38px,12vw,56px);letter-spacing:4px;margin:0;line-height:1;color:#FDC879}
-.hero-in .tag{font-family:Georgia,serif;font-style:italic;font-size:20px;color:#FDC879;margin:10px 0}
-.hero-in p{color:#DFC4AF;max-width:560px}
-.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.cta-row a{background:#FDC879;color:#420303;border-radius:999px;padding:13px 26px;font-weight:800;text-decoration:none}
-.cta-row a.ghost{background:transparent;color:#DFC4AF;border:1px solid #FDC879}
-section{padding:36px 20px;max-width:760px;margin:0 auto}
-section h2{font-family:Georgia,serif;font-size:30px;color:#FDC879;margin:0 0 6px}
-section .kicker{color:#FDC879;font-size:12px;letter-spacing:3px;font-weight:800;text-transform:uppercase}
-section p.lede{color:#DFC4AF}
-.scroller{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 20px 18px;margin:0 -20px}
-.scroller::-webkit-scrollbar{display:none}
-.spec{min-width:min(230px,72vw);scroll-snap-align:start;background:#4C0C09;border:1px solid #FDC879;border-radius:16px;overflow:hidden}
-.spec img{width:100%;display:block}
-.spec div{padding:12px}
-.spec b{font-family:Georgia,serif;font-size:17px;display:block;color:#FDC879}
-.spec span{color:#DFC4AF;font-size:13px}
-.notes{border-left:3px solid #FDC879;padding-left:16px}
-.notes div{margin:14px 0}
-.notes b{display:block;color:#FDC879;font-size:13px;letter-spacing:1px;text-transform:uppercase}
-.notes span{color:#DFC4AF}
-.ticket{background:#4C0C09;border:1px solid #FDC879;border-radius:20px;padding:22px}
-.ticket .big{font-family:Georgia,serif;font-size:34px;margin:4px 0}
-.ticket select{background:#420303;color:#DFC4AF;border:1px solid #FDC879;border-radius:10px;padding:10px;font-size:16px}
-.btn{display:block;width:100%;text-align:center;background:#FDC879;color:#420303;border:0;border-radius:14px;padding:15px;font-size:17px;font-weight:800;cursor:pointer;margin-top:14px}
-.btn:disabled{background:#9A8480;cursor:not-allowed;color:#420303}
-.journal article{background:#4C0C09;border:1px solid #FDC879;border-radius:14px;padding:16px;margin:12px 0}
-.journal h3{font-family:Georgia,serif;margin:0 0 4px;font-size:18px;color:#FDC879}
-.journal p{margin:0;color:#DFC4AF;font-size:14px}
-pre{white-space:pre-wrap;word-break:break-word;background:#2A0202;border:1px solid #FDC879;border-radius:12px;padding:14px;font-size:12px;line-height:1.5;color:#DFC4AF}
-.copybtn{border:1px solid #FDC879;background:#4C0C09;color:#FDC879;border-radius:999px;padding:4px 12px;font-weight:700;cursor:pointer}
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#4C0C09;border-top:1px solid #FDC879;display:flex;align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
-.dock span{font-weight:800;color:#FDC879}
-.dock span small{display:block;color:#9A8480;font-size:12px;font-weight:400}
-.dock a{margin-left:auto;background:#FDC879;color:#420303;border-radius:999px;padding:11px 26px;font-weight:800;text-decoration:none;white-space:nowrap}
-.foot{color:#9A8480;font-size:13px;text-align:center;padding:10px 20px 30px}
+:root{--bg:#420303;--panel:#4C0C09;--panel2:#571009;--line:#7A2418;--txt:#F5E3D3;--mut:#C9A68F;--acc:#FDC879;--gold:#FDC879;--green:#7ED491;--red:#E5484D}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.55;-webkit-text-size-adjust:100%;overflow-x:hidden}
+a{color:var(--acc);text-decoration:none}
+img{max-width:100%;display:block}
+header{position:sticky;top:0;z-index:20;background:rgba(66,3,3,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hwrap{max-width:960px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.logo{font-weight:800;letter-spacing:.12em;font-size:17px;color:var(--txt)}
+.logo span{color:var(--acc)}
+.hwrap nav{margin-left:auto;display:flex;gap:14px;align-items:center}
+.hwrap nav a{color:var(--mut);font-size:13px}
+.lang{display:flex;gap:6px}
+.lang button{border:1px solid var(--line);background:transparent;color:var(--mut);border-radius:999px;padding:5px 11px;font-weight:700;cursor:pointer;font-size:12px}
+.lang button.on{background:var(--acc);color:#420303;border-color:var(--acc)}
+.btn{display:inline-block;background:var(--acc);color:#420303;font-weight:700;border:0;border-radius:10px;padding:10px 18px;font-size:15px;cursor:pointer}
+.btn.small{padding:8px 14px;font-size:13px}
+.btn:disabled{background:#6B4A3A;color:#C9A68F;cursor:not-allowed}
+.btn.ghost{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+main{max-width:960px;margin:0 auto;padding:0 16px 40px}
+.hero{margin:18px 0 8px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel)}
+.hero img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 30%}
+.hero-txt{padding:20px}
+h1{font-size:30px;line-height:1.15;letter-spacing:-.01em}
+.tag{color:var(--acc);font-weight:700;margin-top:8px}
+.lede{color:var(--mut);margin-top:10px;max-width:60ch}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:12px;color:var(--mut)}
+.pill b{color:var(--txt)}
+section{margin-top:28px}
+h2{font-size:22px;margin-bottom:8px}
+h3{font-size:17px;margin-bottom:6px}
+.sub{color:var(--mut);margin-bottom:12px;max-width:66ch}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{text-align:center;padding:14px 6px}
+.stat .n{font-size:24px;font-weight:800;color:#fff}
+.stat .l{font-size:12px;color:var(--mut);margin-top:2px}
+.flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:14px 0}
+.flow-box{border:1px solid var(--acc);border-radius:12px;padding:14px 18px;text-align:center;background:var(--panel2);min-width:120px}
+.flow-box .big{font-size:22px;font-weight:800}
+.flow-box.done{opacity:.55;border-color:var(--line)}
+.flow-box.now{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc)}
+.arrow{font-size:24px;color:var(--acc);font-weight:800}
+.tier{border-top:4px solid #B89A85}
+.tier.t2{border-top-color:var(--acc)}
+.tier.t3{border-top-color:#FB923C}
+.tier.t4{border-top-color:#EF4444}
+.tier.t5{border-top-color:#F59E0B}
+.tier.t6{border-top-color:#DC2626}
+.tier .thumb{height:120px;border-radius:10px;overflow:hidden;margin-bottom:10px}
+.tier .thumb img{width:100%;height:100%;object-fit:cover}
+.stepnum{width:30px;height:30px;border-radius:50%;background:var(--acc);color:#420303;display:inline-flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:8px}
+.qty{display:flex;align-items:center;gap:12px;margin:14px 0}
+.qty button{width:44px;height:44px;font-size:22px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:#fff;cursor:pointer}
+.qty .qv{font-size:22px;font-weight:800;min-width:36px;text-align:center}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{background:transparent;border:0;color:var(--mut);padding:10px 16px;font-weight:700;cursor:pointer;font-size:14px}
+.seg button.on{background:var(--acc);color:#420303}
+.total{font-size:19px;font-weight:800;margin:10px 0}
+.total small{display:block;font-size:13px;color:var(--mut);font-weight:400}
+.note{font-size:13px;color:var(--mut)}
+.note b{color:var(--txt)}
+.out{font-weight:700;color:var(--green)}
+.checkrow{display:flex;gap:10px;margin-top:12px}
+.checkrow input{flex:1;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:#fff;font-size:16px;min-width:0}
+details{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{color:var(--mut);margin-top:8px}
+details pre{white-space:pre-wrap;word-break:break-word;background:#2A0202;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:12px;line-height:1.5;color:var(--mut);margin-top:10px}
+footer{border-top:1px solid var(--line);margin-top:36px;padding:20px 0;color:var(--mut);font-size:13px}
+@media (max-width:640px){
+  h1{font-size:26px}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .grid2,.grid3{grid-template-columns:1fr}
+  .hwrap nav a{display:none}
+  .hero img{aspect-ratio:4/5}
+}
 </style>
 </head>
 <body>
-<div class="hero"><div class="hero-in">
-<div class="lang"><button id="b-en" class="on" onclick="setLang('en')">English</button><button id="b-ja" onclick="setLang('ja')">日本語</button></div>
-<h1>PEEP DYNASTY</h1>
-<p class="tag">Little Chick. Big Fortune.</p>
-<p data-t="intro">A charming NFT collection of adorable chicks from a mystical Chinese kingdom. 888 NFTs on BNB Chain. Chinese 2D Cartoon PFP Collectibles.</p>
-<div class="cta-row"><a href="#mint" data-t="ctaMint">Mint now</a><a class="ghost" href="#flock" data-t="ctaFlock">Meet the flock</a></div>
-</div></div>
+<header>
+  <div class="hwrap">
+    <div class="logo">PEEP <span>DYNASTY</span></div>
+    <nav>
+      <a href="#phases" data-i18n="nav.phases">Phases</a>
+      <a href="#rarities" data-i18n="nav.rarities">Rarities</a>
+      <a href="#how" data-i18n="nav.how">How to mint</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <div class="lang"><button id="b-en" class="on" type="button" onclick="setLang('en')">EN</button><button id="b-ja" type="button" onclick="setLang('ja')">日本語</button></div>
+      <a class="btn small" href="#mint" data-i18n="nav.mint">Mint</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <img src="assets/hero.jpg" alt="PEEP DYNASTY poster — adorable chicks from a mystical Chinese kingdom">
+    <div class="hero-txt">
+      <h1 data-i18n="hero.h1">Little Chick. Big Fortune.</h1>
+      <p class="tag" data-i18n="hero.tag">Chinese 2D Cartoon PFP Collectibles on BNB Chain</p>
+      <p class="lede" data-i18n="hero.lede">An 888-piece NFT collection of adorable chicks from a mystical Chinese kingdom. Five elements — Fire, Water, Wood, Metal, Earth — run through the dynasty's traits.</p>
+      <div class="pillrow">
+        <span class="pill"><b>888</b> <span data-i18n="pill.supply">supply</span></span>
+        <span class="pill"><b>0.0002 BNB</b> <span data-i18n="pill.phase">Phase 1 — FREE sold out</span></span>
+        <span class="pill"><b>11</b> <span data-i18n="pill.wallet">max per wallet</span></span>
+        <span class="pill"><b>1–888</b> <span data-i18n="pill.ids">sequential IDs</span></span>
+      </div>
+      <p style="margin-top:14px"><a class="btn" href="#mint" data-i18n="hero.ctaMint">Mint now — live</a> <a class="btn ghost" href="#rarities" data-i18n="hero.ctaFlock">Meet the flock</a></p>
+      <p class="note" style="margin-top:10px" data-i18n="hero.note">Mint is live. Connect your wallet on BNB Chain — this page never asks for your keys.</p>
+    </div>
+  </div>
 
-<section id="flock">
-<p class="kicker" data-t="kFlock">The flock</p>
-<h2 data-t="hFlock">Six rarities, one dynasty</h2>
-<p class="lede" data-t="ledeFlock">Swipe sideways through the flock. Each chick belongs to one of six rarities — 888 in total. Token IDs are sequential, so the earliest mints are the lowest token IDs.</p>
-</section>
-<div class="scroller">
-<div class="spec"><img src="assets/common.jpg" alt="Common"><div><b>Common</b><span>384 / 888</span></div></div>
-<div class="spec"><img loading="lazy" decoding="async" src="assets/uncommon.jpg" alt="Uncommon"><div><b>Uncommon</b><span>211 / 888</span></div></div>
-<div class="spec"><img loading="lazy" decoding="async" src="assets/rare.jpg" alt="Rare"><div><b>Rare</b><span>134 / 888</span></div></div>
-<div class="spec"><img loading="lazy" decoding="async" src="assets/epic.jpg" alt="Epic"><div><b>Epic</b><span>72 / 888</span></div></div>
-<div class="spec"><img loading="lazy" decoding="async" src="assets/legendary.jpg" alt="Legendary"><div><b>Legendary</b><span>72 / 888</span></div></div>
-<div class="spec"><img loading="lazy" decoding="async" src="assets/mythic.jpg" alt="Mythic"><div><b>Mythic</b><span>15 / 888</span></div></div>
-</div>
+  <section aria-label="Live stats">
+    <div class="card grid4">
+      <div class="stat"><div class="n">888</div><div class="l" data-i18n="stat.supply">Total supply</div></div>
+      <div class="stat"><div class="n">333</div><div class="l" data-i18n="stat.free">FREE — sold out</div></div>
+      <div class="stat"><div class="n">0.0002 BNB</div><div class="l" data-i18n="stat.phase">Phase 1 price</div></div>
+      <div class="stat"><div class="n" id="statMinted">…</div><div class="l" data-i18n="stat.minted">Minted (live)</div></div>
+    </div>
+    <p class="note" style="margin-top:8px" data-i18n="stat.note">Live from the contract — updates every 30 seconds. No wallet needed to view.</p>
+  </section>
 
-<section>
-<p class="kicker" data-t="kNotes">Field notes</p>
-<h2 data-t="hNotes">What the dynasty holds</h2>
-<div class="notes">
-<div><b data-t="nChain">Chain</b><span>BNB Chain mainnet (56), BEP-721</span></div>
-<div><b data-t="nSupply">Supply</b><span>888 — six rarities, sequential IDs</span></div>
-<div><b data-t="nPrice">Price</b><span data-t="nPriceV">FREE 1–333 (gas only) · Phase 1 334–666 at 0.0002 BNB · Phase 2 667–888 at 0.005 BNB</span></div>
-<div><b data-t="nWallet">Per wallet</b><span data-t="nWalletV">11 total, cumulative across all phases</span></div>
-<div><b data-t="nIds">How IDs are drawn</b><span data-t="nIdsV">Sequential, 1–888 — the earliest mints are the lowest token IDs</span></div>
-<div><b data-t="nSell">Sellout total</b><span data-t="nSellV">1.1766 BNB if all 888 sell</span></div>
-</div>
-</section>
+  <section id="phases">
+    <h2 data-i18n="ph.h">Three phases. One dynasty.</h2>
+    <p class="sub" data-i18n="ph.sub">The price rises as the dynasty thins out. Early supporters got the free eggs — Phase 1 is open now, Phase 2 is the last stop.</p>
+    <div class="card">
+      <div class="flow">
+        <div class="flow-box done"><div class="big">FREE</div><div data-i18n="ph.f1">Tokens 1–333 · sold out</div></div>
+        <div class="arrow">→</div>
+        <div class="flow-box now"><div class="big">0.0002 BNB</div><div data-i18n="ph.f2">Phase 1 · tokens 334–666 · open now</div></div>
+        <div class="arrow">→</div>
+        <div class="flow-box"><div class="big">0.005 BNB</div><div data-i18n="ph.f3">Phase 2 · tokens 667–888</div></div>
+      </div>
+      <p class="note" style="text-align:center" data-i18n="ph.note">Token IDs are sequential — the earliest mints are the lowest IDs. The phase is set by how many are already minted, and the price is fixed in the contract.</p>
+    </div>
+  </section>
 
-<section id="mint">
-<p class="kicker" data-t="kTicket">The golden egg</p>
-<h2 data-t="hTicket">Hatch a chick</h2>
-<div class="ticket">
-<p id="liveStats">Minted: … / 888 · Phase: … · Price: …</p>
-<p id="statNote" style="display:none;color:#FDC879" data-t="statNote">Live stats unavailable — check again in a moment.</p>
-<p data-t="howMint">Connect your wallet on BSC mainnet, pick how many chicks to hatch, confirm and pay in BNB.</p>
-<p><span data-t="qtyLabel">Quantity:</span> <select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select></p>
-<button class="btn" id="mintBtn" disabled>Mint</button>
-<p id="mintNote" data-t="mintNote">Mint is open now — choose a quantity and confirm in your wallet.</p>
-<p><b data-t="agentTitle">Agent Mint:</b> <span data-t="agentIntro">paste the prompt below into your own AI agent. Mint is open now.</span></p>
-<pre>You are my minting agent for the PEEP DYNASTY NFT collection on BNB Chain (BSC mainnet, chain ID 56).
+  <section id="how">
+    <h2 data-i18n="how.h">Hatch your chick in three steps.</h2>
+    <p class="sub" data-i18n="how.sub">No forms, no allowlist, no voucher. Just your wallet and BNB.</p>
+    <div class="grid3">
+      <div class="card"><div class="stepnum">1</div><h3 data-i18n="how.s1t">Open in a wallet browser</h3><p class="note" data-i18n="how.s1p">Open this page in MetaMask or Binance Wallet, on BNB Smart Chain (chain 56).</p></div>
+      <div class="card"><div class="stepnum">2</div><h3 data-i18n="how.s2t">Choose how many</h3><p class="note" data-i18n="how.s2p">Pick 1–11 chicks. The total shows the live price — Phase 1 is 0.0002 BNB each right now.</p></div>
+      <div class="card"><div class="stepnum">3</div><h3 data-i18n="how.s3t">Confirm and reveal</h3><p class="note" data-i18n="how.s3p">Confirm in your wallet. Your chick's token ID is sequential — check its rarity below.</p></div>
+    </div>
+  </section>
+
+  <section id="payment">
+    <h2 data-i18n="pay.h">Payment — three phases</h2>
+    <div class="grid2">
+      <div class="card"><h3 data-i18n="pay.freeT">FREE — tokens 1–333</h3><p class="note" data-i18n="pay.freeP">All 333 free chicks were claimed. Free minters only paid network gas, about $0.01. The free phase is closed for good.</p></div>
+      <div class="card"><h3 data-i18n="pay.paidT">Paid — Phase 1 &amp; 2</h3><p class="note" data-i18n="pay.paidP">Phase 1 (tokens 334–666) costs <b>0.0002 BNB each</b>. Phase 2 (tokens 667–888) costs <b>0.005 BNB each</b>. Paid mint is open from the start — buyers never wait for the free phase.</p></div>
+    </div>
+    <div class="card" style="margin-top:12px"><h3 data-i18n="pay.whyT">Why phases?</h3><p class="note" data-i18n="pay.whyP">The earliest supporters take the cheapest eggs, and the price rises as supply thins. The phases are written into the contract — nobody can change them, not even the creator.</p></div>
+  </section>
+
+  <section id="rarities">
+    <h2 data-i18n="rar.h">Six rarities. One dynasty.</h2>
+    <p class="sub" data-i18n="rar.sub">Every chick belongs to one of six rarities. Your token ID decides which one you get.</p>
+    <div class="grid2">
+      <div class="card tier"><div class="thumb"><img src="assets/common.jpg" alt="Common chick" loading="lazy"></div><h3 data-i18n="rar.c1">Common · 384</h3><p class="note" data-i18n="rar.c1p">Tokens 1–384. The heart of the flock.</p></div>
+      <div class="card tier t2"><div class="thumb"><img src="assets/uncommon.jpg" alt="Uncommon chick" loading="lazy"></div><h3 data-i18n="rar.c2">Uncommon · 211</h3><p class="note" data-i18n="rar.c2p">Tokens 385–595. A little harder to find.</p></div>
+      <div class="card tier t3"><div class="thumb"><img src="assets/rare.jpg" alt="Rare chick" loading="lazy"></div><h3 data-i18n="rar.c3">Rare · 134</h3><p class="note" data-i18n="rar.c3p">Tokens 596–729. The dynasty's rising stars.</p></div>
+      <div class="card tier t4"><div class="thumb"><img src="assets/epic.jpg" alt="Epic chick" loading="lazy"></div><h3 data-i18n="rar.c4">Epic · 72</h3><p class="note" data-i18n="rar.c4p">Tokens 730–801. Few and fierce.</p></div>
+      <div class="card tier t5"><div class="thumb"><img src="assets/legendary.jpg" alt="Legendary chick" loading="lazy"></div><h3 data-i18n="rar.c5">Legendary · 72</h3><p class="note" data-i18n="rar.c5p">Tokens 802–873. Legends of the kingdom.</p></div>
+      <div class="card tier t6"><div class="thumb"><img src="assets/mythic.jpg" alt="Mythic chick" loading="lazy"></div><h3 data-i18n="rar.c6">Mythic · 15</h3><p class="note" data-i18n="rar.c6p">Tokens 874–888. Only fifteen in the world.</p></div>
+    </div>
+  </section>
+
+  <section id="checker">
+    <h2 data-i18n="chk.h">Check a token</h2>
+    <p class="sub" data-i18n="chk.sub">Enter any token ID from 1 to 888 and see its rarity, its phase and its price — no wallet needed.</p>
+    <div class="card">
+      <div class="checkrow"><input id="checkInput" type="number" min="1" max="888" placeholder="e.g. 400" aria-label="Token ID"><button class="btn" type="button" id="checkBtn" data-i18n="chk.btn">Check</button></div>
+      <p class="note" style="margin-top:12px" id="checkOut" data-i18n="chk.hint">Token IDs are sequential — IDs up to the minted count are already claimed.</p>
+    </div>
+  </section>
+
+  <section id="mint">
+    <h2 data-i18n="mint.h">Mint — live</h2>
+    <div class="card">
+      <p class="note" id="mintStatus">Chain: <b>BNB Chain Mainnet (56)</b> · Standard: <b>BEP-721</b> · Contract: <b><a href="https://bscscan.com/address/0x849BAA6206F58C4b413F3Ffcb684a7d73132370F" target="_blank" rel="noopener">0x849B…370F</a></b> · Mint: <b id="mintState">LIVE</b></p>
+      <div class="qty">
+        <button type="button" id="qMinus" aria-label="Fewer">−</button>
+        <span class="qv" id="qVal">1</span>
+        <button type="button" id="qPlus" aria-label="More">+</button>
+        <span class="note" data-i18n="mint.qtyNote">Quantity 1–11 · Max 11 per wallet, cumulative</span>
+      </div>
+      <div class="total"><span id="totalVal">0.0002 BNB</span><small data-i18n="mint.totalSub">+ network gas (~$0.01). FREE phase sold out.</small></div>
+      <button class="btn" type="button" id="mintBtn" data-i18n="mint.btn">Mint</button>
+      <p class="note" style="margin-top:10px" id="mintedLine" data-i18n="mint.line">Minted: Loading…</p>
+      <p class="note" style="margin-top:6px" id="mintNote" data-i18n="mint.note">Mint is open now — choose a quantity and confirm in your wallet.</p>
+      <details style="margin-top:14px"><summary data-i18n="mint.agentT">Agent Mint prompt</summary>
+        <p class="note" data-i18n="mint.agentP">Paste the prompt below into your own AI agent. Mint is open now.</p>
+        <pre id="agentPrompt">You are my minting agent for the PEEP DYNASTY NFT collection on BNB Chain (BSC mainnet, chain ID 56).
 
 CONTRACT ADDRESS: 0x849BAA6206F58C4b413F3Ffcb684a7d73132370F
 COLLECTION: PEEP DYNASTY — 888 supply, BEP-721, sequential token IDs
@@ -123,111 +226,147 @@ Only after my confirmation, call mint(QUANTITY) and send exactly currentPrice x 
 After the transaction, report the transaction hash and my new token IDs.
 
 If anything above is unclear, STOP and tell me — do not mint.</pre>
-</div>
-</section>
+        <p style="margin-top:10px"><button class="btn small" type="button" id="copyPrompt" data-i18n="mint.copy">Copy prompt</button></p>
+      </details>
+    </div>
+  </section>
 
-<section class="journal">
-<p class="kicker" data-t="kJournal">Journal</p>
-<h2 data-t="hJournal">Notes from the dynasty</h2>
-<article><h3 data-t="j1t">What is PEEP DYNASTY?</h3><p data-t="j1p">An 888-piece NFT collection of adorable chicks from a mystical Chinese kingdom, drawn as Chinese 2D cartoon PFPs. Five elements — Fire, Water, Wood, Metal, Earth — run through the dynasty's traits.</p></article>
-<article><h3 data-t="j2t">Is the FREE phase still open?</h3><p data-t="j2p">No. All 333 FREE tokens were claimed. Minting now costs 0.0002 BNB each in Phase 1 (tokens 334–666). Phase 2 (tokens 667–888) costs 0.005 BNB each.</p></article>
-<article><h3 data-t="j3t">What do I receive?</h3><p data-t="j3p">A BEP-721 token on BNB Chain with the chick artwork and metadata. Token IDs are sequential, so lower numbers went to earlier mints.</p></article>
-<article><h3 data-t="j4t">Is this affiliated with Binance?</h3><p data-t="j4p">No. PEEP DYNASTY is an independent project on BNB Chain, not a Binance collaboration.</p></article>
-<article><h3 data-t="j5t">How many can I mint?</h3><p data-t="j5p">11 per wallet in total, across all phases. The FREE mints you already claimed count toward that 11.</p></article>
-</section>
+  <section>
+    <h2 data-i18n="rules.h">Honest rules</h2>
+    <div class="card">
+      <p class="note" data-i18n="rules.p">• <b>888 chicks, never more.</b> Token IDs are sequential, 1–888 — the earliest mints are the lowest IDs.<br>
+      • <b>No token, no airdrop promised.</b> No roadmap beyond the dynasty. Paid mint money goes to the creator; the owner can only open or close mint, update the metadata link, and withdraw.<br>
+      • <b>Independent project on BNB Chain</b> — not a Binance collaboration.<br>
+      • Prices and limits are fixed in the contract and cannot be changed. The FREE phase is sold out for good.</p>
+    </div>
+  </section>
 
-<section>
-<p class="kicker" data-t="kSupport">Follow the flock</p>
-<h2 data-t="hSupport">Support</h2>
-<p data-t="supText">Follow PEEP DYNASTY on X for updates. Official X: @peepdnsty</p>
-<div class="cta-row"><a href="https://x.com/intent/follow?screen_name=peepdnsty" target="_blank" rel="noopener" data-t="follow">Follow on X</a><a class="ghost" id="postbtn" href="https://x.com/intent/tweet" target="_blank" rel="noopener" data-t="post">Share on X</a><a class="ghost" href="https://x.com/peepdnsty" target="_blank" rel="noopener" data-t="visit">Visit Profile</a></div>
-<p style="margin-top:20px"><span data-t="contractLabel">Contract:</span> <span id="caddr">0x849B…370F</span> <button class="copybtn" onclick="copyContract()" data-t="copy">Copy</button> · <a href="https://bscscan.com/address/0x849BAA6206F58C4b413F3Ffcb684a7d73132370F" target="_blank" rel="noopener">BscScan</a><br><span data-t="txLabel">Deploy tx:</span> <a href="https://bscscan.com/tx/0x88af5ebc79d1842a3410f3cbd2c3f52604d7105daee89c10d5030bc576a5f10c" target="_blank" rel="noopener">0x88af5ebc…5f10c</a></p>
-</section>
+  <section id="faq">
+    <h2 data-i18n="faq.h">Questions</h2>
+    <details><summary data-i18n="faq.q1">What is PEEP DYNASTY?</summary><p data-i18n="faq.a1">An 888-piece NFT collection of adorable chicks from a mystical Chinese kingdom, drawn as Chinese 2D cartoon PFPs. Five elements — Fire, Water, Wood, Metal, Earth — run through the dynasty's traits.</p></details>
+    <details><summary data-i18n="faq.q2">Is the FREE phase still open?</summary><p data-i18n="faq.a2">No. All 333 FREE tokens were claimed. Minting now costs 0.0002 BNB each in Phase 1 (tokens 334–666). Phase 2 (tokens 667–888) costs 0.005 BNB each.</p></details>
+    <details><summary data-i18n="faq.q3">What do I receive?</summary><p data-i18n="faq.a3">A BEP-721 token on BNB Chain with the chick artwork and metadata. Token IDs are sequential, so lower numbers went to earlier mints.</p></details>
+    <details><summary data-i18n="faq.q4">Is this affiliated with Binance?</summary><p data-i18n="faq.a4">No. PEEP DYNASTY is an independent project on BNB Chain, not a Binance collaboration.</p></details>
+    <details><summary data-i18n="faq.q5">How many can I mint?</summary><p data-i18n="faq.a5">11 per wallet in total, across all phases. The FREE mints you already claimed count toward that 11.</p></details>
+  </section>
 
-<p class="foot" data-t="foot">PEEP DYNASTY — Mint is live now. Official X: @peepdnsty. NFTs are collectible items and do not promise any return.</p>
+  <section>
+    <h2 data-i18n="sup.h">Support</h2>
+    <div class="card">
+      <p><b><span data-i18n="sup.official">Official X:</span> <a href="https://x.com/peepdnsty" target="_blank" rel="noopener">@peepdnsty</a></b></p>
+      <p class="note" data-i18n="sup.p">Follow PEEP DYNASTY on X for updates. Only this handle is official.</p>
+      <p style="margin-top:12px"><a class="btn" href="https://x.com/intent/follow?screen_name=peepdnsty" target="_blank" rel="noopener" data-i18n="sup.follow">Follow on X</a> <a class="btn ghost" id="postBtn" href="https://x.com/intent/tweet" target="_blank" rel="noopener" data-i18n="sup.post">Share on X</a> <a class="btn ghost" href="https://x.com/peepdnsty" target="_blank" rel="noopener" data-i18n="sup.visit">Visit Profile</a></p>
+      <p style="margin-top:16px" class="note"><span data-i18n="sup.contract">Contract:</span> <span id="caddr">0x849B…370F</span> <button class="btn small ghost" type="button" id="copyContract" data-i18n="sup.copy">Copy</button> · <a href="https://bscscan.com/address/0x849BAA6206F58C4b413F3Ffcb684a7d73132370F" target="_blank" rel="noopener">BscScan</a></p>
+    </div>
+  </section>
 
-<div class="dock"><span><span id="dockPrice">0.0002 BNB</span><small data-t="dockSmall">per chick · max 11/wallet</small></span><a href="#mint" data-t="dockMint">Mint</a></div>
-
+  <footer>
+    <p><b data-i18n="foot.live">PEEP DYNASTY — Mint is live now.</b> <span data-i18n="foot.x">Official X: @peepdnsty.</span></p>
+    <p style="margin-top:6px" data-i18n="foot.p">Mint is live on BNB Chain Mainnet. Contract: 0x849BAA6206F58C4b413F3Ffcb684a7d73132370F. No token or airdrop is promised. NFTs are collectibles; prices can go to zero. Nothing on this page is financial advice.</p>
+    <p style="margin-top:6px">© 2026 PEEP DYNASTY. Little Chick. Big Fortune.</p>
+  </footer>
+</main>
 <script>
-var T={
-en:{intro:"A charming NFT collection of adorable chicks from a mystical Chinese kingdom. 888 NFTs on BNB Chain. Chinese 2D Cartoon PFP Collectibles.",ctaMint:"Mint now",ctaFlock:"Meet the flock",kFlock:"The flock",hFlock:"Six rarities, one dynasty",ledeFlock:"Swipe sideways through the flock. Each chick belongs to one of six rarities — 888 in total. Token IDs are sequential, so the earliest mints are the lowest token IDs.",kNotes:"Field notes",hNotes:"What the dynasty holds",nChain:"Chain",nSupply:"Supply",nPrice:"Price",nPriceV:"FREE 1–333 (gas only) · Phase 1 334–666 at 0.0002 BNB · Phase 2 667–888 at 0.005 BNB",nWallet:"Per wallet",nWalletV:"11 total, cumulative across all phases",nIds:"How IDs are drawn",nIdsV:"Sequential, 1–888 — the earliest mints are the lowest token IDs",nSell:"Sellout total",nSellV:"1.1766 BNB if all 888 sell",kTicket:"The golden egg",hTicket:"Hatch a chick",statNote:"Live stats unavailable — check again in a moment.",howMint:"Connect your wallet on BSC mainnet, pick how many chicks to hatch, confirm and pay in BNB.",qtyLabel:"Quantity:",mintNote:"Mint is open now — choose a quantity and confirm in your wallet.",agentTitle:"Agent Mint:",agentIntro:"paste the prompt below into your own AI agent. Mint is open now.",kJournal:"Journal",hJournal:"Notes from the dynasty",j1t:"What is PEEP DYNASTY?",j1p:"An 888-piece NFT collection of adorable chicks from a mystical Chinese kingdom, drawn as Chinese 2D cartoon PFPs. Five elements — Fire, Water, Wood, Metal, Earth — run through the dynasty's traits.",j2t:"Is the FREE phase still open?",j2p:"No. All 333 FREE tokens were claimed. Minting now costs 0.0002 BNB each in Phase 1 (tokens 334–666). Phase 2 (tokens 667–888) costs 0.005 BNB each.",j3t:"What do I receive?",j3p:"A BEP-721 token on BNB Chain with the chick artwork and metadata. Token IDs are sequential, so lower numbers went to earlier mints.",j4t:"Is this affiliated with Binance?",j4p:"No. PEEP DYNASTY is an independent project on BNB Chain, not a Binance collaboration.",j5t:"How many can I mint?",j5p:"11 per wallet in total, across all phases. The FREE mints you already claimed count toward that 11.",kSupport:"Follow the flock",hSupport:"Support",supText:"Follow PEEP DYNASTY on X for updates. Official X: @peepdnsty",follow:"Follow on X",post:"Share on X",visit:"Visit Profile",contractLabel:"Contract:",txLabel:"Deploy tx:",copy:"Copy",foot:"PEEP DYNASTY — Mint is live now. Official X: @peepdnsty. NFTs are collectible items and do not promise any return.",dockSmall:"per chick · max 11/wallet",dockMint:"Mint"},
-ja:{intro:"不思議な中国王国の可愛いひよこたちのコレクション。BNBチェーン上の888体。中国風2DカートゥーンPFP。",ctaMint:"今すぐミント",ctaFlock:"仲間に会う",kFlock:"フロック",hFlock:"6つのレアリティ、ひとつの王朝",ledeFlock:"横にスワイプして仲間を見てみましょう。各ひよこは6つのレアリティのいずれかに属します。合計888体。トークンIDは連番で、早いミントほど小さい番号です。",kNotes:"フィールドノート",hNotes:"王朝の内容",nChain:"チェーン",nSupply:"供給数",nPrice:"価格",nPriceV:"無料 1–333（ガスのみ）・フェーズ1 334–666は0.0002 BNB・フェーズ2 667–888は0.005 BNB",nWallet:"1ウォレットあたり",nWalletV:"合計11体（全フェーズ累計）",nIds:"IDの決まり方",nIdsV:"連番 1–888 — 早いミントほど小さいトークンID",nSell:"完売時合計",nSellV:"全888体が売れた場合 1.1766 BNB",kTicket:"金の卵",hTicket:"ひよこを孵化させよう",statNote:"ライブ統計を取得できません — しばらくしてからもう一度お試しください。",howMint:"BSCメインネットでウォレットを接続し、孵化させるひよこの数を選んで、BNBで支払ってミントします。",qtyLabel:"数量：",mintNote:"ミントは現在オープンしています — 数量を選んでウォレットで承認してください。",agentTitle:"エージェントミント：",agentIntro:"プロンプトをあなたのAIエージェントに貼り付けてください。ミントは現在オープンしています。",kJournal:"ジャーナル",hJournal:"王朝からの便り",j1t:"PEEP DYNASTYとは？",j1p:"不思議な中国王国の可愛いひよこたち888体のコレクション。中国風2DカートゥーンPFPです。五行（火・水・木・金・土）が王朝の特徴に息づいています。",j2t:"無料フェーズはまだありますか？",j2p:"いいえ。無料333体はすべて請求済みです。現在のフェーズ1（334–666体）は1体0.0002 BNB、フェーズ2（667–888体）は1体0.005 BNBです。",j3t:"何を受け取りますか？",j3p:"BNBチェーン上のBEP-721トークン。ひよこのアートとメタデータが付きます。トークンIDは連番で、番号が小さいほど早いミントです。",j4t:"Binanceと関係がありますか？",j4p:"いいえ。PEEP DYNASTYはBNBチェーン上の独立したプロジェクトで、Binanceとのコラボレーションではありません。",j5t:"何体までミントできますか？",j5p:"1ウォレット合計11体まで（全フェーズ累計）。すでに請求した無料ミントも11体に含まれます。",kSupport:"フロックをフォロー",hSupport:"応援",supText:"最新情報はXでフォローしてください。公式X：@peepdnsty",follow:"Xでフォロー",post:"Xでシェア",visit:"プロフィールを見る",contractLabel:"コントラクト：",txLabel:"デプロイTx：",copy:"コピー",foot:"PEEP DYNASTY — ミントは現在オープンしています。公式X：@peepdnsty。NFTはコレクションアイテムであり、収益を約束するものではありません。",dockSmall:"1体あたり · 1ウォレット最大11体",dockMint:"ミント"}};
-function setLang(l){localStorage.setItem('peep_lang',l);document.documentElement.lang=l;
+var STR={
+en:{'nav.phases':'Phases','nav.rarities':'Rarities','nav.how':'How to mint','nav.faq':'FAQ','nav.mint':'Mint','hero.h1':'Little Chick. Big Fortune.','hero.tag':'Chinese 2D Cartoon PFP Collectibles on BNB Chain','hero.lede':'An 888-piece NFT collection of adorable chicks from a mystical Chinese kingdom. Five elements — Fire, Water, Wood, Metal, Earth — run through the dynasty\'s traits.','pill.supply':'supply','pill.phase':'Phase 1 — FREE sold out','pill.wallet':'max per wallet','pill.ids':'sequential IDs','hero.ctaMint':'Mint now — live','hero.ctaFlock':'Meet the flock','hero.note':'Mint is live. Connect your wallet on BNB Chain — this page never asks for your keys.','stat.supply':'Total supply','stat.free':'FREE — sold out','stat.phase':'Phase 1 price','stat.minted':'Minted (live)','stat.note':'Live from the contract — updates every 30 seconds. No wallet needed to view.','ph.h':'Three phases. One dynasty.','ph.sub':'The price rises as the dynasty thins out. Early supporters got the free eggs — Phase 1 is open now, Phase 2 is the last stop.','ph.f1':'Tokens 1–333 · sold out','ph.f2':'Phase 1 · tokens 334–666 · open now','ph.f3':'Phase 2 · tokens 667–888','ph.note':'Token IDs are sequential — the earliest mints are the lowest IDs. The phase is set by how many are already minted, and the price is fixed in the contract.','how.h':'Hatch your chick in three steps.','how.sub':'No forms, no allowlist, no voucher. Just your wallet and BNB.','how.s1t':'Open in a wallet browser','how.s1p':'Open this page in MetaMask or Binance Wallet, on BNB Smart Chain (chain 56).','how.s2t':'Choose how many','how.s2p':'Pick 1–11 chicks. The total shows the live price — Phase 1 is 0.0002 BNB each right now.','how.s3t':'Confirm and reveal','how.s3p':'Confirm in your wallet. Your chick\'s token ID is sequential — check its rarity below.','pay.h':'Payment — three phases','pay.freeT':'FREE — tokens 1–333','pay.freeP':'All 333 free chicks were claimed. Free minters only paid network gas, about $0.01. The free phase is closed for good.','pay.paidT':'Paid — Phase 1 & 2','pay.paidP':'Phase 1 (tokens 334–666) costs <b>0.0002 BNB each</b>. Phase 2 (tokens 667–888) costs <b>0.005 BNB each</b>. Paid mint is open from the start — buyers never wait for the free phase.','pay.whyT':'Why phases?','pay.whyP':'The earliest supporters take the cheapest eggs, and the price rises as supply thins. The phases are written into the contract — nobody can change them, not even the creator.','rar.h':'Six rarities. One dynasty.','rar.sub':'Every chick belongs to one of six rarities. Your token ID decides which one you get.','rar.c1':'Common · 384','rar.c1p':'Tokens 1–384. The heart of the flock.','rar.c2':'Uncommon · 211','rar.c2p':'Tokens 385–595. A little harder to find.','rar.c3':'Rare · 134','rar.c3p':'Tokens 596–729. The dynasty\'s rising stars.','rar.c4':'Epic · 72','rar.c4p':'Tokens 730–801. Few and fierce.','rar.c5':'Legendary · 72','rar.c5p':'Tokens 802–873. Legends of the kingdom.','rar.c6':'Mythic · 15','rar.c6p':'Tokens 874–888. Only fifteen in the world.','chk.h':'Check a token','chk.sub':'Enter any token ID from 1 to 888 and see its rarity, its phase and its price — no wallet needed.','chk.btn':'Check','chk.hint':'Token IDs are sequential — IDs up to the minted count are already claimed.','mint.h':'Mint — live','mint.qtyNote':'Quantity 1–11 · Max 11 per wallet, cumulative','mint.totalSub':'+ network gas (~$0.01). FREE phase sold out.','mint.btn':'Mint','mint.line':'Minted: Loading…','mint.note':'Mint is open now — choose a quantity and confirm in your wallet.','mint.agentT':'Agent Mint prompt','mint.agentP':'Paste the prompt below into your own AI agent. Mint is open now.','mint.copy':'Copy prompt','mint.copied':'Copied!','rules.h':'Honest rules','rules.p':'• <b>888 chicks, never more.</b> Token IDs are sequential, 1–888 — the earliest mints are the lowest IDs.<br>• <b>No token, no airdrop promised.</b> No roadmap beyond the dynasty. Paid mint money goes to the creator; the owner can only open or close mint, update the metadata link, and withdraw.<br>• <b>Independent project on BNB Chain</b> — not a Binance collaboration.<br>• Prices and limits are fixed in the contract and cannot be changed. The FREE phase is sold out for good.','faq.h':'Questions','faq.q1':'What is PEEP DYNASTY?','faq.a1':'An 888-piece NFT collection of adorable chicks from a mystical Chinese kingdom, drawn as Chinese 2D cartoon PFPs. Five elements — Fire, Water, Wood, Metal, Earth — run through the dynasty\'s traits.','faq.q2':'Is the FREE phase still open?','faq.a2':'No. All 333 FREE tokens were claimed. Minting now costs 0.0002 BNB each in Phase 1 (tokens 334–666). Phase 2 (tokens 667–888) costs 0.005 BNB each.','faq.q3':'What do I receive?','faq.a3':'A BEP-721 token on BNB Chain with the chick artwork and metadata. Token IDs are sequential, so lower numbers went to earlier mints.','faq.q4':'Is this affiliated with Binance?','faq.a4':'No. PEEP DYNASTY is an independent project on BNB Chain, not a Binance collaboration.','faq.q5':'How many can I mint?','faq.a5':'11 per wallet in total, across all phases. The FREE mints you already claimed count toward that 11.','sup.h':'Support','sup.official':'Official X:','sup.p':'Follow PEEP DYNASTY on X for updates. Only this handle is official.','sup.follow':'Follow on X','sup.post':'Share on X','sup.visit':'Visit Profile','sup.contract':'Contract:','sup.copy':'Copy','sup.copied':'Copied!','foot.live':'PEEP DYNASTY — Mint is live now.','foot.x':'Official X: @peepdnsty.','foot.p':'Mint is live on BNB Chain Mainnet. Contract: 0x849BAA6206F58C4b413F3Ffcb684a7d73132370F. No token or airdrop is promised. NFTs are collectibles; prices can go to zero. Nothing on this page is financial advice.'},
+ja:{'nav.phases':'フェーズ','nav.rarities':'レアリティ','nav.how':'ミント方法','nav.faq':'FAQ','nav.mint':'ミント','hero.h1':'Little Chick. Big Fortune.','hero.tag':'BNBチェーン上の中国風2DカートゥーンPFPコレクション','hero.lede':'不思議な中国王国の可愛いひよこたち888体のコレクション。五行（火・水・木・金・土）が王朝の特徴に息づいています。','pill.supply':'供給数','pill.phase':'フェーズ1 — 無料は完売','pill.wallet':'1ウォレット最大','pill.ids':'連番ID','hero.ctaMint':'今すぐミント — 受付中','hero.ctaFlock':'仲間に会う','hero.note':'ミントは受付中です。BNBチェーンでウォレットを接続してください — このページが秘密鍵を尋ねることはありません。','stat.supply':'総供給','stat.free':'無料 — 完売','stat.phase':'フェーズ1の価格','stat.minted':'ミント済み（ライブ）','stat.note':'コントラクトからライブ取得 — 30秒ごとに更新。見るだけならウォレットは不要です。','ph.h':'3つのフェーズ。ひとつの王朝。','ph.sub':'王朝が薄くなるにつれて価格は上がります。早いサポーターが無料の卵を手に入れました — フェーズ1が受付中で、フェーズ2が最後です。','ph.f1':'トークン 1–333 · 完売','ph.f2':'フェーズ1 · トークン 334–666 · 受付中','ph.f3':'フェーズ2 · トークン 667–888','ph.note':'トークンIDは連番です — 早いミントほど小さい番号です。フェーズはミント済みの数で決まり、価格はコントラクトに固定されています。','how.h':'3ステップでひよこを孵化させよう。','how.sub':'フォームも、許可リストも、バウチャーも不要。ウォレットとBNBだけです。','how.s1t':'ウォレットブラウザで開く','how.s1p':'MetaMaskまたはBinance Walletでこのページを開き、BNBスマートチェーン（チェーン56）に接続してください。','how.s2t':'数を選ぶ','how.s2p':'1〜11体を選びます。合計はライブ価格で表示されます — 現在フェーズ1は1体0.0002 BNBです。','how.s3t':'承認してリビール','how.s3p':'ウォレットで承認します。ひよこのトークンIDは連番です — レアリティは下で確認できます。','pay.h':'支払い — 3つのフェーズ','pay.freeT':'無料 — トークン 1–333','pay.freeP':'無料333体はすべて請求済みです。無料ミンターが払ったのはネットワークガス（約0.01ドル）のみです。無料フェーズは完全に終了しました。','pay.paidT':'有料 — フェーズ1と2','pay.paidP':'フェーズ1（トークン334–666）は<b>1体0.0002 BNB</b>、フェーズ2（トークン667–888）は<b>1体0.005 BNB</b>です。有料ミントは最初から受付中 — 無料フェーズを待つ必要はありません。','pay.whyT':'なぜフェーズがあるの？','pay.whyP':'早いサポーターほど安い卵を手に入れ、供給が薄くなるにつれて価格が上がります。フェーズはコントラクトに書き込まれており、作成者でも変更できません。','rar.h':'6つのレアリティ。ひとつの王朝。','rar.sub':'どのひよこも6つのレアリティのいずれかに属します。トークンIDで決まります。','rar.c1':'コモン · 384','rar.c1p':'トークン 1–384。フロックの中心です。','rar.c2':'アンコモン · 211','rar.c2p':'トークン 385–595。少し見つけにくいです。','rar.c3':'レア · 134','rar.c3p':'トークン 596–729。王朝の新星たち。','rar.c4':'エピック · 72','rar.c4p':'トークン 730–801。少なく、勇ましい。','rar.c5':'レジェンダリー · 72','rar.c5p':'トークン 802–873。王国の伝説たち。','rar.c6':'ミシック · 15','rar.c6p':'トークン 874–888。世界に15体だけ。','chk.h':'トークンを確認する','chk.sub':'1から888までのトークンIDを入力すると、レアリティ、フェーズ、価格が表示されます — ウォレットは不要です。','chk.btn':'確認する','chk.hint':'トークンIDは連番です — ミント済みの数までのIDはすでに請求済みです。','mint.h':'ミント — ライブ','mint.qtyNote':'数量 1–11 · 1ウォレット最大11体（累計）','mint.totalSub':'+ ネットワークガス（約0.01ドル）。無料フェーズは完売。','mint.btn':'ミント','mint.line':'ミント済み：読み込み中…','mint.note':'ミントは現在オープンしています — 数量を選んでウォレットで承認してください。','mint.agentT':'エージェントミントのプロンプト','mint.agentP':'下のプロンプトをあなたのAIエージェントに貼り付けてください。ミントは現在オープンしています。','mint.copy':'プロンプトをコピー','mint.copied':'コピーしました！','rules.h':'正直なルール','rules.p':'• <b>888体のみで、それ以上増えません。</b>トークンIDは連番の1–888です — 早いミントほど小さい番号です。<br>• <b>トークンやエアドロップの約束はありません。</b>王朝以外のロードマップはありません。有料ミントの収益は作成者に渡ります。所有者ができるのは、ミントの開閉、メタデータリンクの更新、出金のみです。<br>• <b>BNBチェーン上の独立したプロジェクトです</b> — Binanceとのコラボレーションではありません。<br>• 価格と制限はコントラクトに固定されており、変更できません。無料フェーズは完全に終了しました。','faq.h':'質問','faq.q1':'PEEP DYNASTYとは？','faq.a1':'不思議な中国王国の可愛いひよこたち888体のコレクション。中国風2DカートゥーンPFPです。五行（火・水・木・金・土）が王朝の特徴に息づいています。','faq.q2':'無料フェーズはまだありますか？','faq.a2':'いいえ。無料333体はすべて請求済みです。現在のフェーズ1（334–666体）は1体0.0002 BNB、フェーズ2（667–888体）は1体0.005 BNBです。','faq.q3':'何を受け取りますか？','faq.a3':'BNBチェーン上のBEP-721トークン。ひよこのアートとメタデータが付きます。トークンIDは連番で、番号が小さいほど早いミントです。','faq.q4':'Binanceと関係がありますか？','faq.a4':'いいえ。PEEP DYNASTYはBNBチェーン上の独立したプロジェクトで、Binanceとのコラボレーションではありません。','faq.q5':'何体までミントできますか？','faq.a5':'1ウォレット合計11体まで（全フェーズ累計）。すでに請求した無料ミントも11体に含まれます。','sup.h':'応援','sup.official':'公式X：','sup.p':'最新情報はXでフォローしてください。公式X：@peepdnsty','sup.follow':'Xでフォロー','sup.post':'Xでシェア','sup.visit':'プロフィールを見る','sup.contract':'コントラクト：','sup.copy':'コピー','sup.copied':'コピーしました！','foot.live':'PEEP DYNASTY — ミントは現在オープンしています。','foot.x':'公式X：@peepdnsty。','foot.p':'ミントはBNBチェーンメインネットで受付中です。コントラクト：0x849BAA6206F58C4b413F3Ffcb684a7d73132370F。トークンやエアドロップの約束はありません。NFTはコレクションアイテムであり、価格がゼロになることもあります。このページの内容は投資助言ではありません。'}};
+var lang=localStorage.getItem('peep_lang')||'en';
+function t(k){var d=STR[lang]||STR.en;return (d[k]!==undefined)?d[k]:(STR.en[k]||k);}
+function setLang(l){lang=l;localStorage.setItem('peep_lang',l);document.documentElement.lang=l;
 document.getElementById('b-en').className=l=='en'?'on':'';document.getElementById('b-ja').className=l=='ja'?'on':'';
 var pt=l=='ja'?"🐣 PEEP DYNASTYはミント中！無料フェーズは終了、フェーズ1は0.0002 BNBで参加可能。ミント：https://peep-dynasty.vercel.app/ @peepdnsty #PEEPDYNASTY #NFT #BNBChain":"🐣 PEEP DYNASTY is LIVE — FREE phase gone, Phase 1 open at just 0.0002 BNB. Mint: https://peep-dynasty.vercel.app/ @peepdnsty #PEEPDYNASTY #NFT #BNBChain";
-document.getElementById('postbtn').href='https://x.com/intent/tweet?text='+encodeURIComponent(pt);
-document.querySelectorAll('[data-t]').forEach(function(el){var k=el.getAttribute('data-t');if(T[l][k])el.innerHTML=T[l][k];});}
-function copyContract(){var t="0x849BAA6206F58C4b413F3Ffcb684a7d73132370F";
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){alert('Contract copied!');});}
-else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);alert('Contract copied!');}}
-setLang(localStorage.getItem('peep_lang')||'en');
-const CONTRACT='0x849BAA6206F58C4b413F3Ffcb684a7d73132370F';
-const RPCS=['https://bsc-dataseed1.defibit.io/','https://bsc-dataseed.binance.org/','https://bsc-dataseed1.ninicoin.io/'];
-const MAXW=11;
+document.getElementById('postBtn').href='https://x.com/intent/tweet?text='+encodeURIComponent(pt);
+document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(t(k)!==k||STR.en[k])el.innerHTML=t(k);});
+renderTotal();}
+setLang(lang);
+var CONTRACT='0x849BAA6206F58C4b413F3Ffcb684a7d73132370F';
+var RPCS=['https://bsc-dataseed1.defibit.io/','https://bsc-dataseed.binance.org/','https://bsc-dataseed1.ninicoin.io/'];
+var MAXW=11,qty=1,curPrice=0.0002,totalMintedCache=null;
+var RARS=[[1,384,'Common','コモン'],[385,595,'Uncommon','アンコモン'],[596,729,'Rare','レア'],[730,801,'Epic','エピック'],[802,873,'Legendary','レジェンダリー'],[874,888,'Mythic','ミシック']];
+function rarityOf(id){for(var i=0;i<RARS.length;i++){if(id>=RARS[i][0]&&id<=RARS[i][1])return RARS[i];}return null;}
+function phaseOf(id){if(id<=333)return['FREE',0];if(id<=666)return['1',0.0002];return['2',0.005];}
 async function rpcCall(data){
-  for(const u of RPCS){
+  for(var i=0;i<RPCS.length;i++){
     try{
-      const c=new AbortController();const t=setTimeout(()=>c.abort(),10000);
-      const r=await fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',method:'eth_call',params:[{to:CONTRACT,data},'latest'],id:1}),signal:c.signal});
-      clearTimeout(t);
-      const j=await r.json();
-      if(j&&j.result!==undefined)return j.result;
+      var c=new AbortController();var to=setTimeout(function(){c.abort();},10000);
+      var r=await fetch(RPCS[i],{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',method:'eth_call',params:[{to:CONTRACT,data:data},'latest'],id:1}),signal:c.signal});
+      clearTimeout(to);var j=await r.json();
+      if(j&&j.result!==undefined&&j.result!==null)return j.result;
     }catch(e){}
   }
   return null;
 }
-const S={totalMinted:'0xa2309ff8',currentPrice:'0x9d1b464a',mintOpen:'0x24bbd049',mintedPerWallet:'0x3a602b4d'};
+function renderTotal(){document.getElementById('qVal').textContent=qty;document.getElementById('totalVal').textContent=(curPrice*qty).toFixed(4)+' BNB';}
+document.getElementById('qMinus').addEventListener('click',function(){if(qty>1){qty--;renderTotal();}});
+document.getElementById('qPlus').addEventListener('click',function(){if(qty<MAXW){qty++;renderTotal();}});
+renderTotal();
 async function readLive(){
-  const note=document.getElementById('statNote');
-  const tm=await rpcCall(S.totalMinted);
-  const pr=await rpcCall(S.currentPrice);
-  const mo=await rpcCall(S.mintOpen);
-  if(tm===null||pr===null||mo===null){if(note)note.style.display='block';return;}
-  if(note)note.style.display='none';
-  const minted=parseInt(tm,16);
-  const price=parseInt(pr,16)/1e18;
-  const open=parseInt(mo,16)===1;
-  const phase=minted<333?'FREE':(minted<666?'1':'2');
-  const st=document.getElementById('liveStats');
-  if(st)st.textContent='Minted: '+minted+' / 888 · Phase: '+phase+' · Price: '+price.toFixed(4)+' BNB · Status: '+(open?'OPEN':'CLOSED');
-  const dp=document.getElementById('dockPrice');
-  if(dp)dp.textContent=price.toFixed(4)+' BNB';
-  const btn=document.getElementById('mintBtn');
-  if(btn){btn.disabled=!open;btn.textContent=open?'Mint':'Mint Closed';}
-  const mn=document.getElementById('mintNote');
-  if(mn)mn.textContent=open?'Mint is open now — choose a quantity and confirm in your wallet.':'Mint is not open right now.';
+  var tm=await rpcCall('0xa2309ff8');
+  var pr=await rpcCall('0x9d1b464a');
+  var mo=await rpcCall('0x24bbd049');
+  var sm=document.getElementById('statMinted'),ml=document.getElementById('mintedLine'),ms=document.getElementById('mintState'),btn=document.getElementById('mintBtn'),mn=document.getElementById('mintNote');
+  if(tm===null||pr===null||mo===null){if(ml)ml.textContent=t('mint.line');return;}
+  var minted=parseInt(tm,16);totalMintedCache=minted;
+  curPrice=parseInt(pr,16)/1e18;
+  var open=parseInt(mo,16)===1;
+  var phase=minted<333?'FREE':(minted<666?'1':'2');
+  if(sm)sm.textContent=minted+' / 888';
+  if(ml)ml.textContent=(lang=='ja'?'ミント済み：':'Minted: ')+minted+' / 888 · '+(lang=='ja'?'フェーズ：':'Phase: ')+phase+' · '+(lang=='ja'?'価格：':'Price: ')+curPrice.toFixed(4)+' BNB · '+(lang=='ja'?'状態：':'Status: ')+(open?(lang=='ja'?'受付中':'OPEN'):(lang=='ja'?'終了':'CLOSED'));
+  if(ms)ms.textContent=open?(lang=='ja'?'受付中':'LIVE'):(lang=='ja'?'終了':'CLOSED');
+  if(btn){btn.disabled=!open;btn.textContent=open?t('mint.btn'):(lang=='ja'?'ミント終了':'Mint Closed');}
+  if(mn)mn.textContent=open?t('mint.note'):(lang=='ja'?'ミントは現在受付していません。':'Mint is not open right now.');
+  renderTotal();
 }
+readLive();setInterval(readLive,30000);
 async function doMint(){
-  const btn=document.getElementById('mintBtn');
+  var btn=document.getElementById('mintBtn');
   if(!btn||btn.disabled)return;
-  if(!window.ethereum){alert('No wallet found. Open this page in a wallet browser (e.g. Binance Wallet) to mint.');return;}
+  if(!window.ethereum){alert(lang=='ja'?'ウォレットが見つかりません。ウォレットブラウザ（MetaMask / Binance Wallet）でこのページを開いてください。':'No wallet found. Open this page in a wallet browser (MetaMask / Binance Wallet) to mint.');return;}
   try{
-    const chain=await window.ethereum.request({method:'eth_chainId'});
+    var chain=await window.ethereum.request({method:'eth_chainId'});
     if(chain!=='0x38'){
       try{await window.ethereum.request({method:'wallet_switchEthereumChain',params:[{chainId:'0x38'}]});}
-      catch(e){await window.ethereum.request({method:'wallet_addEthereumChain',params:[{chainId:'0x38',chainName:'BNB Smart Chain',nativeCurrency:{name:'BNB',symbol:'BNB',decimals:18},rpcUrls:['https://bsc-dataseed.binance.org/'],blockExplorerUrls:['https://bscscan.com']}]});}
+      catch(e){await window.ethereum.request({method:'wallet_addEthereumChain',params:[{chainId:'0x38',chainName:'BNB Smart Chain',nativeCurrency:{name:'BNB',symbol:'BNB',decimals:18},rpcUrls:['https://bsc-dataseed.binance.org/'],blockExplorerUrls:['https://bscscan.com/'] }]});}
     }
-    const accounts=await window.ethereum.request({method:'eth_requestAccounts'});
-    const me=accounts[0];
-    const pr=await rpcCall(S.currentPrice);
-    if(pr===null){alert('Could not read the current price. Please try again.');return;}
-    const price=BigInt(pr);
-    const myHex=await rpcCall(S.mintedPerWallet+'000000000000000000000000'+me.slice(2).toLowerCase());
-    const myMinted=myHex?parseInt(myHex,16):0;
-    const qEl=document.getElementById('qty');
-    let q=parseInt(qEl?qEl.value:'1',10)||1;
-    const left=MAXW-myMinted;
-    if(left<=0){alert('You already minted the maximum of 11 for this wallet.');return;}
-    if(q>left)q=left;
-    const data='0xa0712d68'+q.toString(16).padStart(64,'0');
-    const value='0x'+(price*BigInt(q)).toString(16);
-    const tx=await window.ethereum.request({method:'eth_sendTransaction',params:[{from:me,to:CONTRACT,value,data}]});
-    alert('Mint transaction sent: '+tx);
+    var ac=await window.ethereum.request({method:'eth_requestAccounts'});
+    var me=ac[0];
+    var pr=await rpcCall('0x9d1b464a');
+    if(pr===null){alert(lang=='ja'?'現在の価格を取得できませんでした。もう一度お試しください。':'Could not read the current price. Please try again.');return;}
+    var price=BigInt(pr);
+    var myHex=await rpcCall('0x3a602b4d'+'000000000000000000000000'+me.slice(2).toLowerCase());
+    var myMinted=myHex?parseInt(myHex,16):0;
+    var left=MAXW-myMinted;
+    if(left<=0){alert(lang=='ja'?'このウォレットはすでに最大11体をミント済みです。':'You already minted the maximum of 11 for this wallet.');return;}
+    if(qty>left)qty=left;
+    var data='0xa0712d68'+qty.toString(16).padStart(64,'0');
+    var value='0x'+(price*BigInt(qty)).toString(16);
+    var tx=await window.ethereum.request({method:'eth_sendTransaction',params:[{from:me,to:CONTRACT,value:value,data:data}]});
+    document.getElementById('mintNote').textContent=(lang=='ja'?'トランザクションを送信しました：':'Transaction sent: ')+tx;
     setTimeout(readLive,15000);
-  }catch(e){alert('Mint failed or was rejected: '+(e&&e.message?e.message:e));}
+  }catch(e){document.getElementById('mintNote').textContent=(lang=='ja'?'ミントに失敗しました：':'Mint failed: ')+(e&&e.message?e.message:e);}
 }
 document.getElementById('mintBtn').addEventListener('click',doMint);
-readLive();setInterval(readLive,30000);
+document.getElementById('checkBtn').addEventListener('click',function(){
+  var v=parseInt(document.getElementById('checkInput').value,10);
+  var out=document.getElementById('checkOut');
+  if(!v||v<1||v>888){out.textContent=lang=='ja'?'1から888までの数字を入力してください。':'Enter a number from 1 to 888.';return;}
+  var r=rarityOf(v),ph=phaseOf(v);
+  var rname=lang=='ja'?r[3]:r[2];
+  var priceTxt=ph[1]===0?(lang=='ja'?'無料（ガスのみ）':'FREE (gas only)'):(ph[1].toFixed(4)+' BNB');
+  var st=totalMintedCache===null?'':(v<=totalMintedCache?(lang=='ja'?' · すでにミント済み':' · already minted'):(lang=='ja'?' · まだミントされていません':' · not minted yet'));
+  out.innerHTML='<span class="out">#'+v+' — '+rname+'</span> · '+(lang=='ja'?'フェーズ ':'Phase ')+ph[0]+' · '+priceTxt+st;
+});
+document.getElementById('copyPrompt').addEventListener('click',function(){
+  var txt=document.getElementById('agentPrompt').textContent;
+  var btn=document.getElementById('copyPrompt');
+  function done(){var o=btn.textContent;btn.textContent=t('mint.copied');setTimeout(function(){btn.textContent=o;},2000);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(function(){});}else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
+});
+document.getElementById('copyContract').addEventListener('click',function(){
+  var txt=CONTRACT;var btn=document.getElementById('copyContract');
+  function done(){var o=btn.textContent;btn.textContent=t('sup.copied');setTimeout(function(){btn.textContent=o;},2000);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(function(){});}else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(ta);}
+});
 </script>
 </body>
 </html>
